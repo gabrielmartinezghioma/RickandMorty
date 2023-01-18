@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import ButtonNaviagte from '../components/ButtonNaviagte';
+import ResidentInfo from '../components/ResidentInfo';
 import dataApi from '../customHooks/dataApi';
 
 const CharacterId = () => {
@@ -17,6 +18,9 @@ const CharacterId = () => {
     path='/'
   />
 
+  const residentsInfo = <ResidentInfo/>
+
+
   const { data } = dataApi(`https://rickandmortyapi.com/api/location/${characterId}`);
 
  const residents = data.residents;
@@ -28,6 +32,7 @@ const CharacterId = () => {
       {buttonNavigateLocation}
       {buttonNavigateHome}
       <h1>{characterId}</h1>
+      {residentsInfo}
      
 
 
