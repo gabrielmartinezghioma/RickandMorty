@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ButtonNaviagte from '../components/ButtonNaviagte';
 import dataApi from '../customHooks/dataApi';
 import CardLocation from '../components/CardLocation';
@@ -10,16 +10,21 @@ const Location = () => {
     text='regresar a home'
     path='/'
   />
+  const [pageId,setPageId]=useState(1)
 
-  const { data, isLoading, isError } = dataApi('https://rickandmortyapi.com/api/location?page=5');
+  const { data, isLoading, isError } = dataApi(`https://rickandmortyapi.com/api/location?page=${pageId}`);
 
+
+
+  const numberPages = (data)=>{
+    setPageId(data);
+  }
  
   const cardLocation = <CardLocation data={data} />
   const navigationPagination =
     <NavigationPagination
       data={data}
-
-
+      numberPages={numberPages}
     />
 
 

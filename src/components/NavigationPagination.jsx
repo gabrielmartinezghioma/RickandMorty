@@ -1,4 +1,4 @@
-const NavigationPagination = ({ data }) => {
+const NavigationPagination = ({ data,numberPages }) => {
 
   const dataList = () => {
     const dataPages = data.info?.pages;
@@ -18,7 +18,7 @@ const NavigationPagination = ({ data }) => {
     <div>
       {
         pagesNumbers.map((number, index) =>
-          <button key={index}>{number}</button>)
+          <button onClick={()=>numberPages(number)} key={index}>{number}</button>)
       }
     </div>
   );
