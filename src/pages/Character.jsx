@@ -1,5 +1,6 @@
 import React from 'react';
 import ButtonNaviagte from '../components/ButtonNaviagte';
+import dataApi from '../customHooks/dataApi';
 
 const Character = () => {
 
@@ -17,6 +18,8 @@ const Character = () => {
       <h2>CHARAACTER</h2>
       {buttonNavigateLocation}
       {buttonNavigateHome}
+
+
       
     </div>
   );

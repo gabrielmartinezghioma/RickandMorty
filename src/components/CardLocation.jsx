@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CardLocation = ({ data }) => {
   const objectData = data.results
@@ -7,15 +8,18 @@ const CardLocation = ({ data }) => {
       {
         objectData?.map((elemnt, index) =>
           <li key={index}>
-            <h2>Nombre: {elemnt?.name}</h2>
-            <h2>Tipo: {elemnt?.type}</h2>
-            <h2>Dimensión: 
-              {elemnt.dimension === 'unknown'
-                ? ' Desconocida'
-                :
-                ` ${elemnt.dimension}`}
-            </h2>
-            <h2>Residentes: {elemnt?.residents.length}</h2>
+
+            <Link to={`/location/:character`}>
+              <h2>Nombre: {elemnt?.name}</h2>
+              <h2>Tipo: {elemnt?.type}</h2>
+              <h2>Dimensión:
+                {elemnt.dimension === 'unknown'
+                  ? ' Desconocida'
+                  :
+                  ` ${elemnt.dimension}`}
+              </h2>
+              <h2>Residentes: {elemnt?.residents.length}</h2>
+            </Link>
 
           </li>)
       }
