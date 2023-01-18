@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {HashRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home'
 import Location from './pages/Location';
 import Character from './pages/Character';
@@ -13,7 +13,7 @@ function App() {
   const character =<Character />
   
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="App">
 
         <Routes>
@@ -25,7 +25,7 @@ function App() {
         </Routes>
 
       </div>
-    </BrowserRouter>
+    </HashRouter>
 
 
   )
