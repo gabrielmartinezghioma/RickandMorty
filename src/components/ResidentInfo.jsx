@@ -1,13 +1,37 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
-const ResidentInfo = () => {
+import dataApi from '../customHooks/dataApi';
+
+const ResidentInfo = ({ data }) => {
+
+const [url,setUrl] =useState({})
+  
+  //  console.log(urls.residents?.[0]);
+
+
+useEffect(()=>{
+  data.residents?.map((url) => {
+    setUrl(url);
+  })
+  
+},[data])
+
+console.log(url);
+
+
   return (
-    <div>
-      <h2>Nombre: </h2>
-      <h2>Estado: </h2>
-      <h3>Lugar: </h3>
-      <h3>Cantidad de episodios en que aprece: </h3>
-    </div>
+
+
+    
+
+      <h2>hola</h2>
+
+
+
+
+   
   );
 };
 

@@ -17,14 +17,16 @@ const CharacterId = () => {
     text={'Regresar a Home'}
     path='/'
   />
-
-  const residentsInfo = <ResidentInfo/>
-
-
+  
   const { data } = dataApi(`https://rickandmortyapi.com/api/location/${characterId}`);
+  
 
- const residents = data.residents;
- console.log(residents);
+  const residentsInfo = <ResidentInfo data={data} />
+
+
+
+
+
  
   return (
     <div>
