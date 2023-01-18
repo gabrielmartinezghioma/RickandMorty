@@ -10,17 +10,18 @@ const Location = () => {
     text='regresar a home'
     path='/'
   />
-  const [pageId,setPageId]=useState(1)
+  const [pageId, setPageId] = useState(1)
 
-  const { data, isLoading, isError } = dataApi(`https://rickandmortyapi.com/api/location?page=${pageId}`);
+  const { data, isLoading, isError } = dataApi(`https://rickandmortyapi.com/api/location?page=${pageId}`, pageId);
 
 
 
-  const numberPages = (data)=>{
+  const numberPages = (data) => {
     setPageId(data);
   }
- 
+
   const cardLocation = <CardLocation data={data} />
+
   const navigationPagination =
     <NavigationPagination
       data={data}

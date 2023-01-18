@@ -9,7 +9,7 @@ const CardLocation = ({ data }) => {
         objectData?.map((elemnt, index) =>
           <li key={index}>
 
-            <Link to={`/location/:character`}>
+            <Link to={`/location/:${elemnt?.id}`}>
               <h2>Nombre: {elemnt?.name}</h2>
               <h2>Tipo: {elemnt?.type}</h2>
               <h2>Dimensión:

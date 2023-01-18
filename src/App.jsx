@@ -2,7 +2,7 @@ import './App.css'
 import {HashRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home'
 import Location from './pages/Location';
-import Character from './pages/Character';
+import CharacterId from './pages/CharacterId';
 
 
 
@@ -10,7 +10,7 @@ function App() {
 
   const home = <Home/>
   const location = <Location />
-  const character =<Character />
+  const characterId =<CharacterId />
   
   return (
     <HashRouter>
@@ -21,7 +21,7 @@ function App() {
 
           <Route path='/location' element={location} />
 
-          <Route path='/location/:character' element={character} />
+          <Route path='/location/:characterId' element={characterId} />
         </Routes>
 
       </div>
