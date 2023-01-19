@@ -9,7 +9,6 @@ function idData(data) {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
-
   const arrayUrl = data.residents;
 
   useEffect(() => {
@@ -43,7 +42,6 @@ function idData(data) {
     //
     isLoading,
     isError
-
   }
 
 }

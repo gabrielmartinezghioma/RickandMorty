@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-function dataApi(url,body) {
+function dataApi(url,body,search) {
 
   const [isLoading, setIsLoading] = useState(false)
   const [data, setData] = useState([]);
@@ -25,7 +25,7 @@ function dataApi(url,body) {
 
   useEffect(() => {
     getDataApi()
-  }, [body]);
+  }, [body,search]);
 
   return {
     //loading
