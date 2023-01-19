@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-function dataApi(url,body) {
+function dataApi(url, body) {
 
   const [isLoading, setIsLoading] = useState(false)
   const [data, setData] = useState([]);

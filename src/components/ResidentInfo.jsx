@@ -1,38 +1,42 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
-
-import dataApi from '../customHooks/dataApi';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const ResidentInfo = ({ data }) => {
 
-const [url,setUrl] =useState({})
-  
-  //  console.log(urls.residents?.[0]);
+  const [character, setCharacter] = useState([]);
+   const arrayUrl = data.residents;
 
 
-useEffect(()=>{
-  data.residents?.map((url) => {
-    setUrl(url);
-  })
-  
-},[data])
-
-console.log(url);
+  useEffect(() => {
+    arrayUrl?.map(async url => {
+      try {
+        const response = await axios.get(url);
+        setCharacter(prevState => [...prevState, response?.data])
+      }
+      catch (error) {
+        console.log(error);
+      }
+    })
+  }, [data]);
 
 
   return (
+    <ul>
 
-
-    
-
-      <h2>hola</h2>
-
-
-
-
-   
+      {character?.map((character, index) => (
+        <li key={index}>
+          <h2>Name: {character?.name}</h2>
+          <h3>Type: {character?.type}</h3>
+          <h3>Status: {character?.status}</h3>
+          <h3>Gender: {character?.gender}</h3>
+          <h3>Location: {character?.location?.name}</h3>
+          <h3>Episodios: {character?.episode?.length}</h3>
+          <img src={`${character?.image}`} alt="" />
+        </li>
+      ))}
+    </ul>
   );
-};
+}
 
 export default ResidentInfo;
