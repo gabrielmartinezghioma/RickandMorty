@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ButtonNaviagte from '../components/ButtonNaviagte';
 import ResidentInfo from '../components/ResidentInfo';
@@ -18,11 +19,11 @@ const CharacterId = () => {
     path='/'
   />
   
-  const { data } = dataApi(`https://rickandmortyapi.com/api/location/${characterId}`);
+  const { data } = dataApi(`https://rickandmortyapi.com/api/location/${characterId}`,characterId);
   
 
-  const residentsInfo = <ResidentInfo data={data} />
-
+  const residentsInfo = <ResidentInfo data={data}
+   />
 
 
 

@@ -2,20 +2,28 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
 const ResidentInfo = ({ data }) => {
 
+  console.log(data.location);
   const [character, setCharacter] = useState([]);
-   const arrayUrl = data.residents;
+  const [requestState, setRequestState] = useState({});
+  const arrayUrl = data.residents;
+   
 
 
-  useEffect(() => {
+   useEffect(() => {
     arrayUrl?.map(async url => {
-      try {
-        const response = await axios.get(url);
-        setCharacter(prevState => [...prevState, response?.data])
-      }
-      catch (error) {
-        console.log(error);
+      // check if request has been made before
+      if (!requestState[url]) {
+        try {
+          setRequestState(prevState => ({ ...prevState, [url]: true }));
+          const response = await axios.get(url);
+          setCharacter(prevState => [...prevState, response?.data])
+        }
+        catch (error) {
+          console.log(error);
+        }
       }
     })
   }, [data]);
