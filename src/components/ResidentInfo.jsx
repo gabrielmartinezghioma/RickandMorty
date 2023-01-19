@@ -9,20 +9,24 @@ const ResidentInfo = ({ data }) => {
   const [character, setCharacter] = useState([]);
   const [requestState, setRequestState] = useState({});
   const arrayUrl = data.residents;
+  const[isLoadinng,setIsLoading]=useState(false);
+  const[isError,setIsError]=useState(false);
    
 
 
    useEffect(() => {
     arrayUrl?.map(async url => {
-      // check if request has been made before
       if (!requestState[url]) {
+        setIsLoading(true);
         try {
           setRequestState(prevState => ({ ...prevState, [url]: true }));
           const response = await axios.get(url);
           setCharacter(prevState => [...prevState, response?.data])
         }
         catch (error) {
-          console.log(error);
+          setIsError(error);
+        }finally{
+          setIsLoading(false)
         }
       }
     })
