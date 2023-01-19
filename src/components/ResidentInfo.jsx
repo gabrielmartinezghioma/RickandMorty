@@ -5,38 +5,37 @@ import axios from 'axios';
 
 const ResidentInfo = ({ data }) => {
 
-  console.log(data.location);
   const [character, setCharacter] = useState([]);
-  const [requestState, setRequestState] = useState({});
+  const [requestMade, setRequestMade] = useState(false);
+  const [isArrayEmpty, setIsArrayEmpty] = useState(false);
   const arrayUrl = data.residents;
-  const[isLoadinng,setIsLoading]=useState(false);
-  const[isError,setIsError]=useState(false);
-   
 
-
-   useEffect(() => {
-    arrayUrl?.map(async url => {
-      if (!requestState[url]) {
-        setIsLoading(true);
+  useEffect(() => {
+    if (!arrayUrl || arrayUrl.length === 0) {
+      setIsArrayEmpty(true);
+    }
+    else if (!requestMade) {
+      setIsArrayEmpty(false)
+      arrayUrl?.map(async url => {
         try {
-          setRequestState(prevState => ({ ...prevState, [url]: true }));
           const response = await axios.get(url);
           setCharacter(prevState => [...prevState, response?.data])
+
         }
         catch (error) {
-          setIsError(error);
-        }finally{
-          setIsLoading(false)
+          console.log(error);
         }
-      }
-    })
+      });
+      setRequestMade(true);
+    }
   }, [data]);
 
 
   return (
     <ul>
+      {isArrayEmpty&&<h1>No hay residentes</h1>}
 
-      {character?.map((character, index) => (
+      {character?.map((character, index) =>
         <li key={index}>
           <h2>Name: {character?.name}</h2>
           <h3>Type: {character?.type}</h3>
@@ -46,7 +45,7 @@ const ResidentInfo = ({ data }) => {
           <h3>Episodios: {character?.episode?.length}</h3>
           <img src={`${character?.image}`} alt="" />
         </li>
-      ))}
+      )}
     </ul>
   );
 }
