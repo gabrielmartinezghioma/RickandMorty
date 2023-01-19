@@ -1,34 +1,12 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import idData from '../customHooks/idData';
+
 
 
 const ResidentInfo = ({ data }) => {
+const {character,isArrayEmpty,isLoading,isError}=idData(data)
 
-  const [character, setCharacter] = useState([]);
-  const [requestMade, setRequestMade] = useState(false);
-  const [isArrayEmpty, setIsArrayEmpty] = useState(false);
-  const arrayUrl = data.residents;
 
-  useEffect(() => {
-    if (!arrayUrl || arrayUrl.length === 0) {
-      setIsArrayEmpty(true);
-    }
-    else if (!requestMade) {
-      setIsArrayEmpty(false)
-      arrayUrl?.map(async url => {
-        try {
-          const response = await axios.get(url);
-          setCharacter(prevState => [...prevState, response?.data])
-
-        }
-        catch (error) {
-          console.log(error);
-        }
-      });
-      setRequestMade(true);
-    }
-  }, [data]);
 
 
   return (
