@@ -4,6 +4,7 @@ import dataApi from '../customHooks/dataApi';
 import CardLocation from '../components/CardLocation';
 import Search from '../components/Search';
 import { Pagination } from '@mui/material'
+import location from '../styles/location.module.css'
 
 
 
@@ -39,11 +40,15 @@ const Location = () => {
 
 
   return (
-    <div >
+    <div className={location.div}>
       {search}
       {cardLocation}
       {/* {navigationPagination} */}
-      <Pagination count={7} onChange={numberPages} variant="outlined" shape="rounded" />
+      <Pagination 
+      className={location.divPaginated}
+      count={7} 
+      onChange={numberPages} 
+      />
     </div>
   );
 };

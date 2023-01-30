@@ -1,0 +1,18 @@
+.div{
+  background-color: var(--color--primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.divPaginated {
+  margin: 5%;
+  background-color: var(--color--fourth);
+  border-radius: 2rem;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
