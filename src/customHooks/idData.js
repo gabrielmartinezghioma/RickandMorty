@@ -16,19 +16,20 @@ function idData(data) {
       setIsArrayEmpty(true);
     }
     else if (!requestMade) {
-      setIsArrayEmpty(false)
+      setIsArrayEmpty(false);
       arrayUrl?.map(async url => {
-        setIsLoading(true)
+        setIsLoading(true);
         try {
           const response = await axios.get(url);
-          setCharacter(prevState => [...prevState, response?.data])
-
+          setCharacter(prevState => [...prevState, response?.data]);
         }
         catch (error) {
           setIsError(error);
         } finally {
-          setIsLoading(false)
-        }
+          setTimeout(()=>{
+            setIsLoading(false)
+          },2000);
+        };
       });
       setRequestMade(true);
     }

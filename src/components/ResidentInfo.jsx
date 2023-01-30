@@ -2,7 +2,7 @@ import React from 'react';
 import idData from '../customHooks/idData';
 
 const ResidentInfo = ({ data }) => {
-const {character,isArrayEmpty,isLoading,isError}=idData(data)
+const {character,isArrayEmpty,isLoading,isError}=idData(data);
 
   return (
     <ul>

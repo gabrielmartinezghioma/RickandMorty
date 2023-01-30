@@ -1,29 +1,49 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import cardLocation from '../styles/cardLocation.module.css'
 
 const CardLocation = ({ data }) => {
-  const objectData = data.results
+  const objectData = data.results;
   return (
-    <ul>
+    <ul className={cardLocation.ul}>
       {
         objectData?.map((elemnt, index) =>
-          <li key={index}>
+          <li key={index} className={cardLocation.ulLi}>
 
-            <Link to={`/location/${elemnt?.id}`}>
-              <h2>Nombre: {elemnt?.name}</h2>
-              <h2>Tipo: {elemnt?.type}</h2>
-              <h2>Dimensión:
-                {elemnt.dimension === 'unknown'
-                  ? ' Desconocida'
-                  :
-                  ` ${elemnt.dimension}`}
-              </h2>
-              <h2>Residentes: {elemnt?.residents.length}</h2>
+            <div className={cardLocation.liDiv}>
+              <h2 className={cardLocation.divh2}>Nombre</h2>
+              <h3 className={cardLocation.divh3}>{elemnt?.name}</h3>
+            </div>
+
+            <div className={cardLocation.ulLiDiv}>
+              <div className={cardLocation.liDiv}>
+                <h2 className={cardLocation.divh2}>Tipo</h2>
+                <h3 className={cardLocation.divh3}> {elemnt?.type}</h3>
+              </div>
+
+              <div className={cardLocation.liDiv}>
+                <h2 className={cardLocation.divh2}>Dimensión</h2>
+                <h3 className={cardLocation.divh3}>
+                  {elemnt.dimension === 'unknown'
+                    ? ' Desconocida'
+                    :
+                    ` ${elemnt.dimension}`}
+                </h3>
+              </div>
+
+              <div className={cardLocation.liDiv}>
+                <h2 className={cardLocation.divh2}>Residentes </h2>
+                <h3 className={cardLocation.divh3}>{elemnt?.residents.length}</h3>
+              </div>
+
+            </div>
+
+            <Link className={cardLocation.divLinkDiv} to={`/location/${elemnt?.id}`}>
+              <button className={cardLocation.linkDivButton}>Visitar <i class='bx bx-navigation'></i></button>
             </Link>
 
           </li>)
       }
-
     </ul>
   );
 };

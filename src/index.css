@@ -1,0 +1,12 @@
+:root{
+  --color--primary:#06292F;
+  --color--secondary:#fff;
+  --third--color:#87C347;
+  --color--fourth:#00B0C8;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans Caption', sans-serif;
+}

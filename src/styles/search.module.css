@@ -1,0 +1,72 @@
+.body {
+  max-width: 100vw;
+  background-color: var(--color--primary);
+  box-sizing: border-box;
+}
+
+.divSearch {
+  background-image: url(Cover.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100vh;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+.divInput {
+  box-sizing: border-box;
+  font-size: 1rem;
+  margin-bottom: 40px;
+  outline: none;
+  border: none;
+  padding: 1% 2%;
+  transition: transform 0.5s;
+  height: 50px;
+  width: 350px;
+  box-sizing: border-box;
+  background-color: rgba(28, 37, 44, 0.39);
+  color: var(--third--color);
+}
+
+.InputActive {
+  transform: scale(110%);
+  color:var(--color--fourth);
+}
+
+.divUl {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 100px;
+  width: 385px;
+  background-color: rgba(28, 37, 44, 0.39);
+  height: 200px;
+  overflow-y: auto;
+  padding: 2%;
+  list-style: none;
+  overflow-x: hidden;
+}
+
+.ulLi {
+  color:var(--color--fourth);
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.ulLi:hover {
+  transform: translateX(20px);
+  color: var(--third--color);
+  transition: transform 1s;
+}
+
+.divUl li a {
+  text-decoration: none;
+}
+
+
