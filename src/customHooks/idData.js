@@ -42,7 +42,7 @@ function idData(data) {
     isArrayEmpty,
     //
     isLoading,
-    isError
+    isError,
   }
 
 }

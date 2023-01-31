@@ -6,14 +6,12 @@ import { Pagination } from '@mui/material'
 import location from '../styles/location.module.css'
 import Loading from '../components/Loading';
 
-
-
 const Location = () => {
 
   const [pageId, setPageId] = useState(1);
   const [dataSearch, setDataSearch] = useState('')
 
-  const { data: searchData, isLoadingSearch, isErrorSearch } = dataApi(`https://rickandmortyapi.com/api/location?name=${dataSearch}`, pageId, dataSearch);
+  const { data: searchData, isLoading: isLoadingSearch, isError: isErrorSearch } = dataApi(`https://rickandmortyapi.com/api/location?name=${dataSearch}`, pageId, dataSearch);
 
   const { data, isLoading, isError } = dataApi(`https://rickandmortyapi.com/api/location?page=${pageId}`, pageId);
 
@@ -36,11 +34,18 @@ const Location = () => {
 
   const loading = <Loading />
 
+
+
+
+
+
+
   return (
     <div className={location.div}>
       {
         isLoading === false || isLoadingSearch === false
           ?
+
           <div className={location.div}>
             {search}
             {cardLocation}
@@ -53,7 +58,7 @@ const Location = () => {
           </div>
           :
           <div className={location.div}>
-           { loading}
+            {loading}
           </div>
       }
     </div>
