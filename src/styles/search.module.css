@@ -28,22 +28,22 @@
   padding: 1% 2%;
   transition: transform 0.5s;
   height: 50px;
-  width: 400px;
+  width: 80%;
   box-sizing: border-box;
-  background-color: rgba(28, 37, 44, 0.39);
-  color: var(--third--color);
+  background-color: rgb(255, 255, 255);
+  color: var(--color--fourth);
 }
 
 .InputActive {
   transform: scale(110%);
-  color:var(--color--fourth);
+  color:var(--color--primary)
 }
 
 .divUl {
   box-sizing: border-box;
   position: absolute;
   bottom: 100px;
-  width: 440px;
+  width: 88%;
   background-color: rgba(28, 37, 44, 0.39);
   height: 200px;
   overflow-y: auto;

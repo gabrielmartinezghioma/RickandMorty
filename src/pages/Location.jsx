@@ -32,12 +32,7 @@ const Location = () => {
     setPageId(value)
   };
 
-
-
   const cardLocation = <CardLocation data={data} />;
-
-
-
 
   return (
     <div className={location.div}>

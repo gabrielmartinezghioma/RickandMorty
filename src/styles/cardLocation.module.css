@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  
   flex-wrap: wrap;
   list-style: none;
 }
@@ -14,10 +14,10 @@
 }
 
 .ulLi {
-  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   box-sizing: border-box;
   width: 600px;
-  height: 250px;
+  height: 280px;
   background-color: #213A3E;
   margin: 2%;
   padding: 2% 2%;
@@ -29,17 +29,17 @@
   transition: transform 0.5s;
 }
 
-.ulLi:hover{
+.ulLi:hover {
   transform: scale(105%);
   transition: transform 0.5s;
-} 
+}
 
 .ulLiDiv {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-
+  margin: 2% 0;
 }
 
 .liDiv {
@@ -53,6 +53,13 @@
   width: 100%;
 }
 
+.divh4 {
+  color: var(--color--secondary);
+  margin: 1% 2%;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
 .divh2 {
   color: var(--color--fourth);
   margin: 0% 4%;
@@ -64,32 +71,36 @@
   margin: 2% 2%;
 }
 
-.divLinkDiv{
+.divLinkDiv {
   width: 100%;
-
+  display: flex;
+  justify-content: center;
 }
 
-.linkDivButton{
+.linkDivButton {
   cursor: pointer;
 }
 
-.linkDivButton{
+.linkDivButton {
   background-color: var(--color--primary);
   color: var(--third--color);
   border: none;
-  width: 40px;
+  width: 40%;
   height: 40px;
   margin: 10px 0;
-  width: 100%;
-  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   font-weight: 700;
   font-size: 1.3rem;
+  transition: transform, width 0.5s;
 }
 
-.linkDivButton:hover{
+.linkDivButton:hover {
   transform: scale(102%);
+  width: 80%;
+  transition: transform, width 0.5s;
 }
-.linkDivButton:active{
+
+.linkDivButton:active {
   transform: scale(95%);
   opacity: 0.5;
 }

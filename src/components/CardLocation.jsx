@@ -12,7 +12,7 @@ const CardLocation = ({ data }) => {
 
             <div className={cardLocation.liDiv}>
               <h2 className={cardLocation.divh2}>Nombre</h2>
-              <h3 className={cardLocation.divh3}>{elemnt?.name}</h3>
+              <h4 className={cardLocation.divh4}>{elemnt?.name}</h4>
             </div>
 
             <div className={cardLocation.ulLiDiv}>
@@ -39,7 +39,7 @@ const CardLocation = ({ data }) => {
             </div>
 
             <Link className={cardLocation.divLinkDiv} to={`/location/${elemnt?.id}`}>
-              <button className={cardLocation.linkDivButton}>Visitar <i class='bx bx-navigation'></i></button>
+              <button className={cardLocation.linkDivButton}>Visitar <i className='bx bx-navigation'></i></button>
             </Link>
 
           </li>)
