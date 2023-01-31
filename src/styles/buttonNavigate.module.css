@@ -1,0 +1,36 @@
+.div{
+  position: fixed;
+  left: 0;
+  top: 40px;
+  left: 40px;
+}
+.div a {
+  text-decoration: none;
+}
+
+.divButton{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #213A3E;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+  color: var(--color--secondary);
+  transition: transform , opacity 0.5s;
+  cursor: pointer;
+}
+
+.divButton:hover{
+  opacity: 0.8;
+  transition: transform , opacity 0.5s;
+  transform: scale(98%);
+}
+
+.divButton:active{
+  transform: scale(90%);
+  transition: transform 0.5s;
+}

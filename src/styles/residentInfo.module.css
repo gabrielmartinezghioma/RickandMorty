@@ -1,0 +1,61 @@
+.ul {
+  box-sizing: border-box;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ulLi {
+  box-sizing: border-box;
+  width: 80%;
+  display: flex;
+  background-color: #213A3E;
+  margin: 2%;
+  padding: 2%;
+  color: var(--color--secondary);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+
+.ulLi:hover {
+  transform: scale(105%);
+  transition: transform 0.5s;
+}
+
+.ulLiImg {
+  border-radius: 50%;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.ulLiDiv {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 2% 5%;
+  justify-content: space-around;
+}
+
+
+h2, h3 {
+
+  font-weight: 400;
+  color: var(--color--secondary);
+  font-size: 1.2rem;
+  
+}
+
+.h2Span {
+  font-weight: 700;
+  color: var(--color--fourth);
+  font-size: 1.5rem;
+}
+
+.h3Span{
+  font-weight: 400;
+  color: var(--third--color);
+  font-size: 1.3rem;
+}
