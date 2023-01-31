@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import ButtonNaviagte from '../components/ButtonNaviagte';
 import dataApi from '../customHooks/dataApi';
 import CardLocation from '../components/CardLocation';
 import Search from '../components/Search';
 import { Pagination } from '@mui/material'
 import location from '../styles/location.module.css'
+import Loading from '../components/Loading';
 
 
 
@@ -34,17 +34,30 @@ const Location = () => {
 
   const cardLocation = <CardLocation data={data} />;
 
+  const loading = <Loading />
+
   return (
     <div className={location.div}>
-      {search}
-      {cardLocation}
-      {/* {navigationPagination} */}
-      <Pagination 
-      className={location.divPaginated}
-      count={7} 
-      onChange={numberPages} 
-      />
+      {
+        isLoading === false || isLoadingSearch === false
+          ?
+          <div className={location.div}>
+            {search}
+            {cardLocation}
+            {/* {navigationPagination} */}
+            <Pagination
+              className={location.divPaginated}
+              count={7}
+              onChange={numberPages}
+            />
+          </div>
+          :
+          <div className={location.div}>
+           { loading}
+          </div>
+      }
     </div>
+
   );
 };
 
